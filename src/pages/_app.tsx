@@ -1,6 +1,13 @@
 import "@/styles/globals.css";
+import "@turnkey/react-wallet-kit/styles.css";
+
 import type { AppProps } from "next/app";
+import { Providers } from "@/providers/providers";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+  );
 }
